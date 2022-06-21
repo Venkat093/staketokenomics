@@ -1,0 +1,118 @@
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav .brand-container .brand img {
+	height: 40%;
+	width: 40%;
+}
+
+.toggle-container {
+	display: none;
+}
+
+nav .links-container .links {
+	list-style-type: none;
+	display: flex;
+	gap: 4rem;
+}
+nav .links-container .links li .dark {
+	color: black;
+}
+nav .links-container .links li .light {
+	color: yellow;
+}
+.links li a {
+	color: var(--accent-color3);
+	text-decoration: none;
+}
+.links li :last-of-type a {
+	color: var(--pink);
+}
+button {
+	color: var(--accent-color1);
+	background-color: var(--background);
+	font-weight: bold;
+	padding: 0.5rem;
+	border-radius: 2rem;
+	box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+	border: solid 3px transparent;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0),
+			rgba(255, 255, 255, 0)
+		),
+		linear-gradient(101deg, var(--goldenyellow), var(--yellow));
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	box-shadow: 2px 100px 1px var(--background) inset;
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+}
+button:hover {
+	box-shadow: none;
+}
+
+@media screen and (min-width: 280px) and (max-width: 1080px) {
+	nav {
+		position: relative;
+		padding: 1rem 2rem;
+	}
+	nav .brand-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+	nav .brand-container .brand img {
+		width: 30%;
+		height: 30%;
+	}
+
+	.toggle-container {
+		display: block;
+		color: var(--accent-color1);
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 1rem;
+		z-index: 40;
+	}
+	.toggle-container .toggle {
+		z-index: 40;
+		display: block;
+	}
+
+	nav .links-container {
+		z-index: 30;
+		background-image: linear-gradient(
+			101deg,
+			var(--goldenyellow),
+			var(--yellow)
+		);
+		height: 100vh;
+		position: absolute;
+		top: 0;
+		right: 0;
+		opacity: 0;
+		width: 0;
+		visibility: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.5s ease-in-out;
+	}
+	nav .links-container .links {
+		flex-direction: column;
+	}
+	.links li a {
+		color: var(--background);
+	}
+	nav .links-container .links li :last-of-type {
+		display: none;
+	}
+	nav .nav-visible {
+		width: 60vw;
+		visibility: visible;
+		opacity: 1;
+	}
+}
